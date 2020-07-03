@@ -1,2 +1,2 @@
-# wknd-react-starter
-React App Boilerplate
+# wknd-react-blog-starter
+React App Blog Boilerplate
