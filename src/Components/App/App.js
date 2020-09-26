@@ -37,7 +37,7 @@ const AppRoutes = () => (
 class App extends Component {
   constructor(props) {
     super(props);
-    this.blogService = new BlogService()
+    this.blogService = BlogService
     this.state = {
       postsLoaded: true,
       posts: this.props.initialState.posts ?? [],

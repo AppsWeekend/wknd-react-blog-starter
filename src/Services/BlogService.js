@@ -1,11 +1,15 @@
 import fetch from "isomorphic-unfetch"
 
-export default class BlogService {
-    ROOT_URL = "https://blog-admin.wetalksound.co/"
+class BlogService {
+    ROOT_URL = "https://services.etin.space/notes/"
     BASE_API_URL = this.ROOT_URL + "wp-json/wp/v2/"
     POSTS_URL = this.BASE_API_URL + "posts/"
     CATEGORIES_URL = this.BASE_API_URL + "categories/"
     AUTHOR_URL = this.BASE_API_URL + "authors/"
+
+    constructor(blogDriver, blogURL) {
+      this.ROOT_URL = blogURL
+    }
 
     getCategories = async (limit=100, offset=0) => {
         console.log("Getting categories")
@@ -58,3 +62,5 @@ export default class BlogService {
         return data[0]
     }
 }
+const {REACT_APP_BLOG_DRIVER, REACT_APP_BLOG_URL} = process.env
+export default new BlogService(REACT_APP_BLOG_DRIVER, REACT_APP_BLOG_URL)
