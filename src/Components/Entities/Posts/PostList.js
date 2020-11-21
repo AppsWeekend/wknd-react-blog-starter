@@ -22,15 +22,7 @@ export default class PostList extends Component {
           posts.map((post, key) => (
               <Post 
                 key={key}
-                post={{
-                  title: post.title.rendered,
-                  datePublished: post.date,
-                  image: post?.['_embedded']?.['wp:featuredmedia']?.[0]?.source_url,
-                  category: post?.['_embedded']?.['wp:term']?.[0]?.[0]?.name,
-                  excerpt: post?.excerpt.rendered,
-                  author: post?._embedded?.author[0].name,
-                  link: "/posts/" + post.slug
-                }}
+                post={post}
              />
             )
           )

@@ -16,7 +16,7 @@ export default class PostPreviewCard extends Component {
             <h5 className="card-title" dangerouslySetInnerHTML={{ __html: this.props.post.title }}></h5>
           </Link>
           <p className="card-subtitle">
-            <small>{this.props.post.author} - <PostDate date={this.props.post.datePublished} /></small>
+            <small>{this.props.post.author.name} - <PostDate date={this.props.post.datePublished} /></small>
           </p>
           <div className="card-text" dangerouslySetInnerHTML={{ __html: this.props.post.excerpt }}>
           </div>
