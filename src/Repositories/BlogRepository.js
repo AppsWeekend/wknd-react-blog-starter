@@ -35,7 +35,9 @@ class BlogRepository {
     })
     let data = await categoryResponse.json()
     data = data[0]
-
+    if (!data) {
+      return
+    }
     let postsResponse = await fetch(this.POSTS_URL + "?_embed&categories=" + data.id + "&per_page=" + limit, {
       method: 'GET'
     })
