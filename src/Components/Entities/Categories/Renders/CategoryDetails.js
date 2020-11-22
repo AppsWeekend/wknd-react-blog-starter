@@ -43,14 +43,11 @@ export default function CategoryDetails({ category }) {
         <div className="row">
           <div className="col-12">
             <h4 className="text-center">Articles From This Category</h4>
-            <PostList
-              posts= {category.posts}
-              layout={{
-                component: CardColumns,
-                props: {}
-              }}
-              renderAs={PostPreviewCard}
-            />
+            <CardColumns>
+              <PostList>
+                <PostPreviewCard />
+              </PostList>
+            </CardColumns>
           </div>
         </div>
       </div>

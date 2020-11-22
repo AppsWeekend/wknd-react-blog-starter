@@ -5,7 +5,7 @@ import BlogContext from 'Components/Contexts/BlogContext';
 export default class PostList extends Component {
 
   componentDidMount() {
-    if (! this.context.postsLoaded) {
+    if (!this.context.postsLoaded) {
       this.context.getPosts(this.props.limit)
     }
   }
@@ -14,20 +14,10 @@ export default class PostList extends Component {
 
   render() {
     let posts = this.props.posts ?? this.context.posts ?? [];
-    const Post = this.props.renderAs
-    const Layout = this.props.layout.component
     return (
-      <Layout {...this.props.layout.props} >
-        {
-          posts.map((post, key) => (
-              <Post 
-                key={key}
-                post={post}
-             />
-            )
-          )
-        }
-      </Layout>
+      posts.map((post, key) => (
+        React.cloneElement(this.props.children, { post, key })
+      ))
     )
   }
 }

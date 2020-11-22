@@ -10,13 +10,11 @@ export default function AllPostsPage() {
         <div className="row">
           <div className="col-12">
             <h4 className="text-center">All Our Articles</h4>
-            <PostList
-              layout={{
-                component: CardColumns,
-                props: {}
-              }}
-              renderAs={PostPreviewCard}
-            />
+              <CardColumns>
+                <PostList>
+                    <PostPreviewCard />
+                </PostList>
+              </CardColumns>
           </div>
         </div>
       </div>

@@ -10,14 +10,11 @@ export default function TopCategories() {
         <div className="row">
           <div className="col-12">
             <h4 className="text-center">Categories</h4>
-            <CategoryList 
-              limit={5}
-              layout={{
-                component: Stack,
-                props: {}
-              }}
-              renderAs={CategoryPreview}
-            />
+            <Stack>
+              <CategoryList limit={5}>
+                <CategoryPreview />
+              </CategoryList>
+            </Stack>
           </div>
         </div>
       </div>
