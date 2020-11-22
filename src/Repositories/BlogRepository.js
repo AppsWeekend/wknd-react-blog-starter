@@ -1,7 +1,7 @@
 import fetch from "isomorphic-unfetch"
 import { htmlDecode } from "Helpers/Helpers"
 
-class BlogDriver {
+class BlogRepository {
   constructor(blogURL) {
     this.ROOT_URL = blogURL
     this.BASE_API_URL = `${this.ROOT_URL}/wp-json/wp/v2`
@@ -78,4 +78,4 @@ class BlogDriver {
 
 
 const { REACT_APP_BLOG_URL } = process.env
-export default new BlogDriver(REACT_APP_BLOG_URL)
+export default new BlogRepository(REACT_APP_BLOG_URL)

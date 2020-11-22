@@ -1,4 +1,4 @@
-import blogDriver from "Drivers/BlogDriver"
+import blogDriver from "Repositories/BlogRepository"
 
 class BlogService {
   getCategories = async (limit = 100, offset = 0) => {
