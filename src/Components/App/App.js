@@ -135,7 +135,6 @@ class App extends Component {
           <meta name="twitter:image:alt" content="WeTalkSound | Nigeria's Biggest Music Community" />
         </Helmet>
         <div className="App">
-          {console.log("Location", this.props.location)}
           {
             this.props.location ?
               <StaticRouter location={this.props.location} >
