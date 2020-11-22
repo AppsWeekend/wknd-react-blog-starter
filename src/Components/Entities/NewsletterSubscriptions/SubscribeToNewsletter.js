@@ -49,12 +49,16 @@ export default class SubscribeToNewsletter extends Component {
   }
 
   render() {
-    const Subscribe = this.props.renderAs
-    const Layout = this.props.layout.component
+
     return (
-      <Layout {...this.props.layout.props} >
-        <Subscribe onSubmit={this.submitEmail} message={this.state.message} status={this.state.status} />
-      </Layout>
+        React.cloneElement(
+          this.props.children, 
+          {
+            onSubmit: this.submitEmail, 
+            message: this.state.message, 
+            status: this.state.status
+          }
+        )
     )
   }
 }

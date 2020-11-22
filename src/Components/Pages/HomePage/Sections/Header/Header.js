@@ -11,13 +11,9 @@ export default class Header extends Component{
             <div className="col-12 text-center">
               <h2>Feel The Beat Of</h2>
               <h1>Nigeria's Biggest Music Community.</h1>
-              <SubscribeToNewsletter 
-                renderAs={SubscribeButtonWithOverlay}
-                layout={{
-                  component: React.Fragment,
-                  props:{}
-                }}
-              />
+              <SubscribeToNewsletter>
+                <SubscribeButtonWithOverlay />
+              </SubscribeToNewsletter>
             </div>
           </div>
         </div>
