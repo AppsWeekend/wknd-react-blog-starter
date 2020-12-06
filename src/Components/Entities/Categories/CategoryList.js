@@ -14,17 +14,10 @@ export default class CategoryList extends Component {
 
   render() {
     const categories = this.context.categories ?? [];
-    const Category = this.props.renderAs
-    const Layout = this.props.layout.component
     return (
-      <Layout {...this.props.layout.props} >
-        {
-          categories.map((category, key) => (
-              <Category key={key} category={category} />
-            )
-          )
-        }
-      </Layout>
+      categories.map((category, key) => (
+        React.cloneElement(this.props.children, { category, key })
+      ))
     )
   }
 }

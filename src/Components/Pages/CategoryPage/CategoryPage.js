@@ -5,14 +5,9 @@ import CategoryDetails from 'Components/Entities/Categories/Renders/CategoryDeta
 export default function CategoryPage({ match }) {
   return (
     <div className="Category">
-      <Category 
-        match={match}
-        layout={{
-          component: React.Fragment,
-          props: {}
-        }}
-        renderAs={CategoryDetails}
-      />
+      <Category match={match}>
+        <CategoryDetails />
+      </Category>
     </div>
   )
 }
