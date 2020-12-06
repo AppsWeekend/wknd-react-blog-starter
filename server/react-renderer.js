@@ -7,9 +7,7 @@ const fs = require('fs')
 
 const App = require('../src/Components/App/App').default
 
-const BlogService = require('../src/Services/BlogService').default
-
-const blogService = new BlogService()
+const blogService = require('../src/Services/BlogService').default
 
 exports = module.exports
 

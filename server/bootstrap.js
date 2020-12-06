@@ -29,5 +29,6 @@ require('@babel/register')({
         ]
     ]
 })
-
+require('dotenv').config()
+console.log(process.env.REACT_APP_BLOG_URL)
 require('./index')
