@@ -25,7 +25,7 @@ export default function FullPost({ post }) {
         <div className="container">
           <div className="row align-items-md-center">
             <div className="col-12 col-md-6 mb-3">
-              <img class="img-fluid" alt={post.title.rendered} src={post.image} />
+              <img class="img-fluid" alt={post.title} src={post.image} />
             </div>
             <div className="col-12 col-md-6 mb-3">
               <span className="category"><small>{post.category}</small></span>

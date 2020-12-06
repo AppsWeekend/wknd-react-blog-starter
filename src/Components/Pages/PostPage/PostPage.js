@@ -5,14 +5,9 @@ import FullPost from 'Components/Entities/Posts/Renders/FullPost';
 export default function PostPage({ match }) {
   return (
     <div className="Post">
-      <Post 
-        match={match}
-        layout={{
-          component: React.Fragment,
-          props: {}
-        }}
-        renderAs={FullPost}
-      />
+      <Post match={match}>
+        <FullPost/>
+      </Post>
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import BlogContext from 'Components/Contexts/BlogContext'
 import Loading from 'Components/Utilities/Loading/Loading'
 import Default from 'Components/Pages/DefaultPage/DefaultPage'
@@ -27,13 +27,7 @@ export default class Post extends Component {
         content = <Loading />
         break;
       case "POST_LOADED":
-        const Post = this.props.renderAs
-        const Layout = this.props.layout.component
-        content = (
-          <Layout {...this.props.layout.props} >
-            <Post post={post} />
-          </Layout>
-        )
+        content = React.cloneElement(this.props.children, { post })
         break;
       case "POST_NOT_FOUND":
         content = <Default />
@@ -41,10 +35,6 @@ export default class Post extends Component {
       default:
         break;
     }
-    return (
-      <Fragment>
-        { content }
-      </Fragment>
-    )
+    return content
   }
 }
